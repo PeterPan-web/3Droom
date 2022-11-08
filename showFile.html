@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+<html style="padding:0px;margin:0px;">
+<head>
+
+    <title></title>
+    <meta charset="utf-8" />
+    <script src="js/jquery-2.2.2.js"></script>
+    <!-- <script src="js/file.js"></script> -->
+    <script src="js/tldesign3D/core/TLPDFServer.js"></script>
+</head>
+<body style="padding:0px;margin:0px;">
+    <div id="content">
+
+    </div>
+</body>
+<script>
+    var url = "upload/files/test.pdf";
+    var options = {
+        height: ($(window).height() - 10) + "px",
+        pdfOpenParams: { view: 'FitV', page: '0' },
+        name: "mans",
+        fallbackLink: "<p>您的浏览器暂不支持此pdf，请下载最新的浏览器</p>"
+    };
+    PDFObject.embed(url, "#content", options);
+
+</script>
+</html>

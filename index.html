@@ -1,0 +1,121 @@
+﻿<!DOCTYPE html>
+<html style="padding:0px;margin:0px;">
+<head>
+    <style>
+        body {
+            background: linear-gradient(to top right, #002a48, #2e5aa9, #15477d);
+        }
+        .layui-layer {
+            background-color: rgba(255, 255, 255,0.25) !important;
+        }
+
+        .layui-layer-title {
+            color: black !important;
+            background-color: rgba(255, 255, 255, 0.7) !important;
+            border-bottom: 0 solid rgba(0,0,0,1) !important;
+        }
+
+        .canvas_frame {
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0);
+            overflow: hidden;
+        }
+
+        .toolbar {
+            display: block;
+            position: absolute;
+            text-align: center;
+            top: 0px;
+            width: 100%;
+            height: auto;
+            background: rgba(255, 255, 255, 0.04);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 5px;
+            padding: 5px 0px;
+            margin: 0 auto;
+        }
+
+            .toolbar img {
+                margin: 5px;
+                width: 24px;
+                height: 24px;
+                pointer-events: auto;
+                cursor: pointer;
+            }
+
+        .Stats_output {
+            display: block;
+            position: absolute;
+            border-radius: 5px;
+            padding: 5px;
+        }
+
+        .boxParentContent {
+            height: 230px;
+            width: 33px;
+            float: left;
+            cursor:pointer;
+        }
+
+        .boxFile {
+            height: 180px;
+            cursor: pointer;
+            width: 25px;
+            float: left;
+            margin: 2px;
+            border: 2px solid #210e05;
+            background: #8d5335;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: #ff0;
+        }
+
+        .upBox {
+            cursor: pointer;
+            float: left;
+        }
+
+        .deleteBoxFile {
+            cursor: pointer;
+            float: left;
+        }
+    </style>
+
+    <title>3D智能库房管理</title>
+    <meta charset="utf-8" />
+    <!-- 基础js包 -->
+    <script src="js/jquery-2.2.2.js"></script>
+    <script src="js/commonFunction.js"></script>
+    <script src="js/tldesign3D/core/tl3DLoadData.core.js"></script>
+    <script src="js/tldesign3D/core/ThreeBSP.js"></script>
+    <script src="js/tldesign3D/core/TLDesinWeenAnima.js"></script>
+    <script src="js/tldesign3D/sourse/Detector.js"></script>
+    <script src="js/tldesign3D/sourse/OBJLoader.js"></script>
+    <script src="js/tldesign3D/core/TLDesignEngine.min.js"></script>
+    <script src="js/tldesign3D/core/tl3DLoadData.control.js"></script>
+    <script src="js/tldesign3D/sourse/BinaryLoader.js"></script>
+    <script src="js/tldesign3D/core/TransformControls.js"></script>
+    <script src="js/tldesign3D/core/stats.min.js"></script>
+    <script src="js/tldesign3D/core/tl3DLoadData.mxdin.js"></script>
+    <script src="libs/layer/layer.js"></script>
+    <!-- 引入js处理方法 -->
+    <!-- 各种事件的触发 -->
+    <script src="js/tldesign3D/mode/modelCore.js"></script>
+    
+    <script src="js/tldesign3D/mode/modelSetting.js"></script>
+    <script src="js/tldesign3D/mode/baseSetting.js"></script>
+</head>
+<body onload="InitPage(0);" style="padding:0px;margin:0px;">
+<script>
+    if (!Detector.webgl) {
+        layer.alert("您的浏览器不支持3D功能,请使用支持WebGL的浏览器（例如：chrome浏览器、ie11以上浏览器等）");
+    }
+</script>
+    <div id="dataCanvasList" style="position:absolute;z-index:-1;display:none;width:5px;height:5px;overflow:hidden;"><div style="width:10px;height:10px;float:left;position:relative;"></div></div>
+    <div id="canvas-frame" class="canvas_frame"></div>
+</body>
+</html>
